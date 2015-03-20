@@ -52,8 +52,7 @@ public class BigDecimalTest {
     private void prepareForScale() throws ParseException {
         for (int i = 0; i < stringList.size(); i++) {
             String value = stringList.get(i);
-            String tempValue = value.replace(",", "");
-            tempValue = tempValue.replace(".", "");
+            String tempValue = value.replace(",", "").replace(".", "");
             if (NumberUtils.isNumber(tempValue)) {
                 DecimalFormat df = (DecimalFormat) NumberFormat.getInstance(Locale.GERMANY);
                 df.setParseBigDecimal(true);
