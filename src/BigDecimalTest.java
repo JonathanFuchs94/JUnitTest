@@ -40,7 +40,12 @@ public class BigDecimalTest {
         Collections.sort(bigDecimalList);
         for (int i = 0; i < bigDecimalList.size(); i++) {
             System.out.println(bigDecimalList.get(i));
-            assertEquals(stringList.get(i).substring(5), bigDecimalList.get(i).toString().replace(".", ","));
+            if (stringList.get(i).length() > 4) {
+                String val = stringList.get(i).substring(0, 4);
+                assertEquals(val, bigDecimalList.get(i).toString().replace(".", ","));
+            } else {
+                assertEquals(stringList.get(i), bigDecimalList.get(i).toString().replace(".", ","));
+            }
         }
     }
 
