@@ -29,9 +29,9 @@ public class BigDecimalTest {
     public void setup() {
         bigDecimalList = new ArrayList<>();
         stringList = new ArrayList<String>();
+        stringList.add(valueThree);
         stringList.add(valueOne);
         stringList.add(valueTwo);
-        stringList.add(valueThree);
     }
 
     @Test
@@ -40,7 +40,7 @@ public class BigDecimalTest {
         Collections.sort(bigDecimalList);
         for (int i = 0; i < bigDecimalList.size(); i++) {
             System.out.println(bigDecimalList.get(i));
-            assertEquals(stringList.get(i), bigDecimalList.get(i).toString());
+            assertEquals(stringList.get(i).substring(5), bigDecimalList.get(i).toString().replace(".", ","));
         }
     }
 
